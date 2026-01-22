@@ -1,0 +1,18 @@
+# Jido ecosystem packages (cloned separately)
+/packages/
+
+# Elixir/Mix artifacts (in case you create projects here)
+/_build/
+/deps/
+*.ez
+*.beam
+
+# Editor/IDE
+.idea/
+.vscode/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
