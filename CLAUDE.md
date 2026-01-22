@@ -10,13 +10,16 @@ This is a learning repository containing the **Jido Ecosystem** - a collection o
 
 ```
 jido_ecosystem/
-├── jido/           # Core agent framework (immutable agents + cmd/2)
-├── jido_action/    # Composable, validated actions with AI tool integration
-├── jido_signal/    # CloudEvents-based messaging and routing
-├── jido_ai/        # AI/LLM integration for agents
-├── req_llm/        # HTTP client for 57+ LLM providers
-├── jido_workbench/ # Phoenix demo application
-└── pull_all.sh     # Script to pull all repos
+├── CLAUDE.md       # This file - guidance for AI coding agents
+├── README.md       # Project overview and quick start
+├── pull_all.sh     # Script to clone/pull all repos into packages/
+└── packages/       # Cloned Jido repositories (git-ignored)
+    ├── jido/           # Core agent framework (immutable agents + cmd/2)
+    ├── jido_action/    # Composable, validated actions with AI tool integration
+    ├── jido_signal/    # CloudEvents-based messaging and routing
+    ├── jido_ai/        # AI/LLM integration for agents
+    ├── req_llm/        # HTTP client for 57+ LLM providers
+    └── jido_workbench/ # Phoenix demo application
 ```
 
 ## Dependency Graph
