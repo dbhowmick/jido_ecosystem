@@ -162,6 +162,8 @@ test(plan): add DAG cycle detection tests
 chore(deps): bump jido_action to 2.0.0-rc
 ```
 
+**Important**: Do NOT include "Co-Authored-By" lines in commit messages.
+
 ## Key Modules by Repository
 
 **jido**:
