@@ -7,28 +7,30 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PACKAGES_DIR="$SCRIPT_DIR/packages"
 
 REPOS=(
-  "jido"
-  "jido_action"
-  "jido_ai"
-  "jido_signal"
-  "jido_workbench"
-  "req_llm"
+  "agentjido/jido"
+  "agentjido/jido_action"
+  "agentjido/jido_ai"
+  "agentjido/jido_signal"
+  "agentjido/jido_workbench"
+  "agentjido/req_llm"
+  "kreuzberg-dev/kreuzberg"
 )
-
-GITHUB_ORG="agentjido"
 
 # Create packages directory if it doesn't exist
 mkdir -p "$PACKAGES_DIR"
 
-for repo in "${REPOS[@]}"; do
+for entry in "${REPOS[@]}"; do
+  # Extract org and repo from "org/repo" format
+  org="${entry%/*}"
+  repo="${entry##*/}"
   repo_path="$PACKAGES_DIR/$repo"
   if [ -d "$repo_path" ]; then
     echo "Pulling $repo..."
     cd "$repo_path" && git pull origin main
     echo ""
   else
-    echo "Cloning $repo..."
-    git clone "https://github.com/$GITHUB_ORG/$repo.git" "$repo_path"
+    echo "Cloning $repo from $org..."
+    git clone "https://github.com/$org/$repo.git" "$repo_path"
     echo ""
   fi
 done
